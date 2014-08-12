@@ -1,0 +1,57 @@
+<head>
+	<title>Crawler</title>
+</head>
+
+<body>
+	{{> header}}
+
+	{{> search}}
+	{{> result}}
+	{{> searchresults}}
+</body>
+
+
+<template name="header">
+	<div class="container">
+  		<h3 class="masthead-brand">LinkScraper</h3>
+	</div>
+</template>
+
+
+<template name="search">
+	<div class="site-wrapper">
+		<div class="container">
+			<div class="span12">
+				<form>
+					<input type="text" class="btn btn-lg btn-default" id="searchInput">
+				</form>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="result">
+	{{url}}
+	<ul>
+	{{#each result}}
+			<ul>
+			<a href={{link}}>{{text}}</a>
+			<br>
+			<br>
+			</ul>
+	{{/each}}
+		</ul>
+</template>	
+
+<template name="searchresults">
+	{{url}}
+	<ul>
+	{{#each searchresults}}
+			<ul>
+			<a href={{link}}>{{text}}</a>
+			<br>
+			<br>
+			</ul>
+	{{/each}}
+		</ul>
+</template>	
